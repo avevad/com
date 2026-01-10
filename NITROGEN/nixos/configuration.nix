@@ -10,8 +10,8 @@ in
   imports = [
     ./hardware.nix
     ./systemd.nix
-    ./wireguard.nix
     ./containers.nix
+    ./vpn/configuration.nix
   ];
 
   networking = {

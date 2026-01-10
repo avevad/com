@@ -35,7 +35,7 @@
           #   allowedIPs = [ "10.0.0.0/8" ];
           #   endpoint = "hub.avevad.com:51339";
           # }
-        ] ++ ( import ./wireguard/wg0.nix );
+        ] ++ ( import ./peers.nix );
         postSetup = ''
           ip route add default dev gateway_wg1 table 42
           ip route add 10.100.0.0/24 dev gateway_wg0 table 42
