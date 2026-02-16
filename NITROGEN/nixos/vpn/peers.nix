@@ -4,7 +4,7 @@
     allowedIPs = [ "10.100.0.2/32" ];
   }
   { # XIAOMI
-    publicKey = "gukSNw5FLxr75ebakFJXRcosiDsX37lxzOeByLzRsB8=";
+    publicKey = "zL8uqZTAIvNM+gUosa6jOLyicduDCmedYR7X2Ss/FGQ=";
     allowedIPs = [ "10.100.0.3/32" ];
   }
   { # MACOS
