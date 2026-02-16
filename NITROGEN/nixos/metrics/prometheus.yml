@@ -50,3 +50,6 @@ scrape_configs:
     scheme: https
     static_configs:
       - targets: ['ddl.nitrogen.avedus.pro:443']
+  - job_name: actinium-ipmi
+    static_configs:
+      - targets: ['10.10.10.100:9290']
