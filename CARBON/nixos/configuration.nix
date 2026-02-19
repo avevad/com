@@ -3,15 +3,10 @@
 {
   imports =
     [
-      ./hardware-configuration.nix
-      ./haproxy/configuration.nix
+      ./hardware.nix
     ];
 
   nixpkgs.config.allowUnfree = true;
-
-  hardware.graphics.enable = true;
-  services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.nvidia.open = false;
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -53,22 +48,9 @@
   programs.wireshark.enable = true;
   programs.wireshark.dumpcap.enable = true;
 
-  programs.steam.enable = true;
-
-  services.xserver.enable = true;
-  services.xserver.desktopManager.xfce.enable = true;
-
   time.timeZone = "Europe/Moscow";
 
   virtualisation.docker.enable = true;
-
-  users.groups.admin = {};
-  users.users.admin = {
-    isNormalUser = true;
-    group = "admin";
-    homeMode = "770";
-    extraGroups = [ "wheel" ];
-  };
 
   users.groups.media = {};
   users.users.avevad = {
@@ -84,6 +66,7 @@
 
   services.openssh = {
     enable = true;
+    listenAddresses = [ { addr = "10.10.10.10"; port = 22;  } ];
     settings.X11Forwarding = true;
   };
   services.jellyfin.enable = true;
