@@ -4,6 +4,7 @@
   imports =
     [
       ./hardware.nix
+      ./balancer/configuration.nix
     ];
 
   nixpkgs.config.allowUnfree = true;
