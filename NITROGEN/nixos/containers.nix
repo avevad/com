@@ -60,7 +60,7 @@ in
     };
 
     passmgr-vaultwarden = {
-      image = "vaultwarden/server:1.33.0";
+      image = "vaultwarden/server:1.35.3";
       ports = [ "127.0.0.1:8808:80" ];
       volumes = [ "/mnt/state/vaultwarden:/data" ];
       environment = {
