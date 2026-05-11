@@ -13,52 +13,6 @@ in
       registry = "https://ghcr.io";
     };
   in {
-    pushy-postgres = {
-      image = "postgres:16";
-      ports = [ "127.0.0.1:5432:5432" ];
-      volumes = [ "/mnt/state/pushy/postgres:/var/lib/postgresql/data/pgdata" ];
-      cmd = [ "-c" "log_checkpoints=false" ];
-      environment = {
-        POSTGRES_PASSWORD = "password";
-        PGDATA = "/var/lib/postgresql/data/pgdata";
-      };
-      extraOptions = [ "--network=pushy" "--ip=192.168.1.101" ];
-    };
-
-    pushy-tgbot = {
-      image = ENV.DEPLOY.PUSHY_REV;
-      login = ghcrAuth;
-      ports = [ "127.0.0.1:8000:8000" ];
-      volumes = [ "${ ./secrets/voxapi-credentials.json }:/voxapi-credentials.json:ro" ];
-      extraOptions = [ "--dns=10.100.0.1" "--network=pushy" ];
-      environment = pkgs.lib.recursiveUpdate {
-        PUSHY_TG_TOKEN=ENV.TOKENS.PUSHY_TG;
-        PUSHY_DB_URL="postgresql+psycopg2://postgres:password@192.168.1.101/pushy";
-        PUSHY_VERSION_SUFFIX="";
-        PUSHY_VOXAPI_CREDS_FILE="/voxapi-credentials.json";
-        PUSHY_VOXAPI_RULE_ID="8018889";
-      } ENV.TOKENS.PUSHY_ENV_ETC;
-    };
-
-    pushy-test-tgbot = {
-      image = ENV.DEPLOY.PUSHY_TEST_REV;
-      login = ghcrAuth;
-      cmd = [ "--root-path" "/api" ];
-      ports = [ "127.0.0.1:8001:8000" ];
-      extraOptions = [ "--dns=10.100.0.1" "--network=pushy" ];
-      environment = pkgs.lib.recursiveUpdate {
-        PUSHY_VERSION_SUFFIX="-${ builtins.substring 108 7 ENV.DEPLOY.PUSHY_TEST_REV }";
-        PUSHY_DB_URL="postgresql+psycopg2://postgres:password@192.168.1.101/pushy_test";
-        PUSHY_TG_TOKEN=ENV.TOKENS.PUSHY_TEST_TG;
-      } ENV.TOKENS.PUSHY_TEST_ENV_ETC;
-    };
-
-    pushy-docs = {
-      image = ENV.DEPLOY.PUSHY_DOCS_REV;
-      login = ghcrAuth;
-      ports = [ "127.0.0.1:8888:80" ];
-    };
-
     passmgr-vaultwarden = {
       image = "vaultwarden/server:1.35.3";
       ports = [ "127.0.0.1:8808:80" ];
@@ -67,6 +21,7 @@ in
         TZ="Europe/Moscow";
         LOG_LEVEL="error";
         EXTENDED_LOGGING="true";
+        ADMIN_TOKEN=ENV.TOKENS.VAULTWARDEN_ADMIN_TOKEN;
       };
     };
 

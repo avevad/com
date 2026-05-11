@@ -54,4 +54,19 @@ in
       PermitRootLogin = "no";
     };
   };
+
+  services.nginx = {
+    enable = true;
+
+    recommendedGzipSettings = true;
+    recommendedOptimisation = true;
+    recommendedTlsSettings = true;
+
+    virtualHosts = {
+      "copyfail.avevad.com" = {
+        root = ./www/copyfail.avevad.com;
+        listen = [ { addr = "127.0.0.1"; port = 8080; } ];
+      };
+    };
+  };
 }

@@ -11,9 +11,17 @@
     publicKey = "8ukfO7G7MdNkg4pYJO2JK+Okzrj8tAkfnGPupmP2jGw=";
     allowedIPs = [ "10.100.0.4/32" ];
   }
-  { # SPEEDSTER
-    publicKey = "SFS6NP/mC5gYfNLPTSwWn9O4G/yhnOOPQmjkDQzjISc=";
-    allowedIPs = [ "10.100.0.7/32" ];
+  { # ULTRA
+    publicKey = "njb70LARqwc5jHUoPErIuZdF+jGU+SmaeMY3zqhHaX8=";
+    allowedIPs = [ "10.100.0.5/32" ];
+  }
+  { # SODIUM
+    publicKey = "PyjzPE37AFnbDkqeFfYQvJaZaE60Sgt1hGw9qVvuvi4=";
+    allowedIPs = [ "10.100.0.8/32" ];
+  }
+  { # XIAOMI
+    publicKey = "5g67mDkahnXKo2lpM/NpvTejfWdyPFanE8liQD/vwGU=";
+    allowedIPs = [ "10.100.0.9/32" ];
   }
   { # DIMREM
     publicKey = "PQoRJ+Cq6dadX+Ngvv/ywm0VoJ/S4OV57lSQQQXwYlo=";
@@ -30,6 +38,10 @@
   { # DIMREM_MED
     publicKey = "TvRkMwFSsLQ96EIjnMKbfgvSz4T9TffGz7SrUSBeFBI=";
     allowedIPs = [ "10.100.0.15/32" ];
+  }
+  { # DIMREM_TMP
+    publicKey = "BzsquJhmgrFDxt5VEY2Be/gY0Y8r/APGWxc2UsfGBj0=";
+    allowedIPs = [ "10.100.0.16/32" ];
   }
   { # NTONEE
     publicKey = "TOnxWOVlrkDY907dpjRkky57GTuCNZVTUlqf8iybTwM=";
@@ -50,6 +62,10 @@
   { # T
     publicKey = "tnnJaL+ni8tem1hx7z15PiVS2j33cGq8Od6DG6KHmxo=";
     allowedIPs = [ "10.100.0.41/32" ];
+  }
+  { # F
+    publicKey = "GfzMpzRVlXs6lErt/ePuRfpUmupPJVxJJ6vlDPyDiFc=";
+    allowedIPs = [ "10.100.0.42/32" ];
   }
   { # ROBIVIRT
     publicKey = "3fpuiXytGReAn2fZJXZPj2tXQV9n1VqYLFmM37xZcl4=";

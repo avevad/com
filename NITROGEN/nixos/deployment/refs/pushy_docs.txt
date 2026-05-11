@@ -1,1 +1,0 @@
-ghcr.io/pushy-dev/pushy-docs/pushy-docs@sha256:a75e4c11ddfdd6a4f6678a4609e5c5621173cffa9dfe3559ddb1cbedfde38278

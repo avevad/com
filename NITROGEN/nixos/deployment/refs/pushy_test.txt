@@ -1,1 +1,0 @@
-ghcr.io/pushy-dev/pushy-tg-bot/pushy-tg-bot@sha256:319f142e2672a9fc58b821bd602be30349e3136f98b86456b241750854df42f0

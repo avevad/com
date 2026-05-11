@@ -17,13 +17,13 @@
             publicKey = "frYUUl/wWzMUeiIzjjzZeAkWCg7tie4KwtCK3yqCum8=";
             allowedIPs = [ "10.100.100.20/32" ];
           }
-          { # CARBON
-            publicKey = "W3iaqQovfM23eAYqTWraxI7rRYDppqKrdeT+d4IN3zI=";
-            allowedIPs = [ "10.100.100.30/32" "10.10.0.0/16" ];
-          }
           { # SODIUM
             publicKey = "SiKngAeU5ddcd95DfWXDs/8/g8ccEHFj/tOP2Or0alE=";
             allowedIPs = [ "10.100.100.40/32" ];
+          }
+          { # ULTRA
+            publicKey = "Bjt3G1nGF1vSq1UWzM/TbmWYBCyjDKlu3ZO7PEvnZlQ=";
+            allowedIPs = [ "10.100.100.50/32" "10.10.10.0/24" ];
           }
         ];
       };
@@ -79,25 +79,30 @@
       auth-server = "nitrogen.avevad.com";
       auth-zone = "avedus.pro";
       host-record = [
-        # Hub servers
-        "nitrogen.avedus.pro,10.100.100.10" "nitrogen.avedus.pro,10.100.0.1"
-        "helium.avedus.pro,10.100.100.20"
-        "carbon.avedus.pro,10.100.100.30" "carbon.avedus.pro,10.10.10.10"
-        "sodium.avedus.pro,10.100.100.40"
         # Important hosts
         "netlink.avedus.pro,10.10.0.1"
-        "speedster.avedus.pro,10.10.10.1"
+        "ultra.avedus.pro,10.10.10.1"
         "actinium-ipmi.avedus.pro,10.10.10.101"
         "actinium.avedus.pro,10.10.10.100"
         "oxygen.avedus.pro,10.10.10.11"
+	# Hub servers
+        "nitrogen.avedus.pro,10.100.100.10" "nitrogen.avedus.pro,10.100.0.1" "nitrogen.avedus.pro,10.100.100.1"
+        "helium.avedus.pro,10.100.100.20"
+        "carbon.avedus.pro,10.10.10.10"
+        "sodium.avedus.pro,10.100.100.40"
+        "ultra.avedus.pro,10.100.100.50"
+
       ];
       cname = [
         # Service subdomains
         "*.nitrogen.avedus.pro,nitrogen.avedus.pro"
         "*.helium.avedus.pro,helium.avedus.pro"
         # Proxy aliases
+        "cinema.at.avedus.pro,carbon.avedus.pro"
         "passwords.at.avedus.pro,nitrogen.avedus.pro"
         "metrics.at.avedus.pro,nitrogen.avedus.pro"
+        "vectors.at.avedus.pro,carbon.avedus.pro"
+        "search.at.avedus.pro,carbon.avedus.pro"
         "proxmox-ac.at.avedus.pro,nitrogen.avedus.pro"
       ];
     };

@@ -53,3 +53,8 @@ scrape_configs:
   - job_name: actinium-ipmi
     static_configs:
       - targets: ['10.10.10.100:9290']
+  - job_name: kkksave
+    metrics_path: '/GezLGsNLO73dwn4E2-59TNyABlypkz33o9uIsRZS2vI/metrics'
+    scheme: https
+    static_configs:
+      - targets: [ 'kksav.com' ]
