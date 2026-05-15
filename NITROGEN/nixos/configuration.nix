@@ -15,6 +15,10 @@ in
     ./balancer/configuration.nix
   ];
 
+  boot.kernel.sysctl = {
+    "net.ipv4.ip_nonlocal_bind" = 1;
+  };
+
   networking = {
     hostName = "NITROGEN";
     domain = "avevad.com";
@@ -34,21 +38,20 @@ in
     shell = pkgs.fish;
     packages = with pkgs; [
       vim
+      htop
+      neofetch
+      git
     ];
   };
 
   environment.systemPackages = with pkgs; [
-    htop
-    neofetch
-    git
-    slirp4netns
-    python311Full
-    python311Packages.pip
+      python313
+      python313Packages.pip
   ];
 
   services = {
     openssh.enable = true;
-    openssh.listenAddresses = [ { addr = "10.100.100.10"; port = 22; } ];
+    #openssh.listenAddresses = [ { addr = "10.100.100.10"; port = 22; } ];
     openssh.settings = {
       PasswordAuthentication = false;
       PermitRootLogin = "no";
