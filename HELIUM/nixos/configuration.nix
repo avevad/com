@@ -10,9 +10,8 @@
     firewall.enable = false;
 
     hostName = "HELIUM";
-    fqdn = "helium.avevad.com";
-
     domain = "avedus.pro";
+    fqdn = "helium.avedus.pro";
     nameservers = [ "1.1.1.1" "1.0.0.1" ];
     interfaces.ens3.ipv4 = {
       addresses = [ { address = "146.103.124.240"; prefixLength = 24; } ];
