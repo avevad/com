@@ -51,7 +51,7 @@ in
 
   services = {
     openssh.enable = true;
-    #openssh.listenAddresses = [ { addr = "10.100.100.10"; port = 22; } ];
+    openssh.listenAddresses = [ { addr = "10.100.0.1"; port = 22; } ];
     openssh.settings = {
       PasswordAuthentication = false;
       PermitRootLogin = "no";
