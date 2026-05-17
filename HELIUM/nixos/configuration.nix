@@ -22,16 +22,19 @@
     };
 
     wireguard.interfaces = {
-      wg1 = {
+      wg1 = { # HELIUM<->NITROGEN
         listenPort = 51340;
         ips = [ "10.254.254.1/30" ];
         privateKeyFile = "/var/wireguard/key1.txt";
         peers = [
           { # NITROGEN
-            publicKey = "frYUUl/wWzMUeiIzjjzZeAkWCg7tie4KwtCK3yqCum8=";
+            publicKey = "o7zLP/AEfZLYJmDy0NFPSkoPiHo1QlAkJeBc8dHBjHo=";
             allowedIPs = [ "10.254.254.2" ];
           }
         ];
+        postSetup = ''
+          ${pkgs.iptables}/bin/iptables -t nat -A POSTROUTING -o ens3 -j MASQUERADE
+        '';
       };
     };
   };
