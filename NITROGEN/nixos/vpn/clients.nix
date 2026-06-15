@@ -7,8 +7,8 @@
     publicKey = "8ukfO7G7MdNkg4pYJO2JK+Okzrj8tAkfnGPupmP2jGw=";
     allowedIPs = [ "10.100.0.4" ];
   }
-  { # ULTRA
-    publicKey = "njb70LARqwc5jHUoPErIuZdF+jGU+SmaeMY3zqhHaX8=";
+  { # M5
+    publicKey = "8K9goO+lVOXkyjeTGpuqRdmFIw8lE8pKjNs4bXM7u3E=";
     allowedIPs = [ "10.100.0.5" ];
   }
   { # XIAOMI

@@ -8,28 +8,36 @@
         ips = [ "10.100.0.1/16" ];
         privateKeyFile = "/var/wireguard/key0.txt";
         peers = [
-          
+          { # ULTRA
+            publicKey = "Bjt3G1nGF1vSq1UWzM/TbmWYBCyjDKlu3ZO7PEvnZlQ=";
+            allowedIPs = [ "10.100.10.10/16" "10.10.0.0/16" ];
+          }
         ] ++ ( import ./clients.nix );
         allowedIPsAsRoutes = false;
         postSetup = ''
           ip route add 10.100.0.0/16 dev wg0 table 42
+          ip route add 10.10.0.0/16 via 10.100.10.10 dev wg0
+          ip route add 10.10.0.0/16 via 10.100.10.10 dev wg0 table 42
           ip rule add iif wg0 table 42
         '';
         preShutdown = ''
           ip rule delete iif wg0
+          ip route del 10.10.0.0/16 via 10.100.10.10 dev wg0 table 42
+          ip route del 10.10.0.0/16 via 10.100.10.10 dev wg0
           ip route del 10.100.0.0/16 dev wg0 table 42
         '';
       };
 
-      wg1 = { # NITROGEN<->HELIUM
+      wg1 = { # NITROGEN<->dimrem
         listenPort = 51340;
-        ips = [ "10.254.254.2/30" ];
+        ips = [ "10.8.0.6/32" ];
         privateKeyFile = "/var/wireguard/key1.txt";
         peers = [
-          { # HELIUM
-            publicKey = "rLR9fCJbULe90Rf6IRs8IFKlYZIqg9maGtiTlF4gnwo=";
+          { # dimrem
+            publicKey = "tVh679yQKdxP27Hgzh0+q8nl+4Js8MzoGjtM6pyxcic=";
+            presharedKeyFile = "/var/wireguard/pskey1.txt";
             allowedIPs = [ "0.0.0.0/0" ];
-            endpoint = "helium.in.avevad.com:51340";
+            endpoint = "de.vpn.dimrem.com:32554";
             persistentKeepalive = 25;
           }
         ];
