@@ -58,3 +58,6 @@ scrape_configs:
     scheme: https
     static_configs:
       - targets: [ 'kksav.com' ]
+  - job_name: luchain
+    static_configs:
+      - targets: ['193.124.128.102:9091']
