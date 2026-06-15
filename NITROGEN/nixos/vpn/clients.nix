@@ -55,12 +55,8 @@
     publicKey = "Jpz7LicWhX/4LwIzABtz199Wi217fol5z1nrkT5i630=";
     allowedIPs = [ "10.100.0.73" ];
   }
-  { # TMP
-    publicKey = "04iTgRnbG4Rtz8yAK5RDgpMy4muVXwN8zLYoIT3MN2I=";
-    allowedIPs = [ "10.100.0.99" ];
-  }
-  { # TMP2
-    publicKey = "FoSBzL54u3RSVfQ8s5dmHK4LaT1aJQ0NfN4Kt4xfBkc=";
-    allowedIPs = [ "10.100.0.98" ];
+  { # MAX
+    publicKey = "WY434khd1S13at3SLooQLfmBt5tkXAzkbTp0uNlUsTs=";
+    allowedIPs = [ "10.100.0.74" ];
   }
 ]
