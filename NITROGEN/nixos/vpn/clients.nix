@@ -11,6 +11,10 @@
     publicKey = "8K9goO+lVOXkyjeTGpuqRdmFIw8lE8pKjNs4bXM7u3E=";
     allowedIPs = [ "10.100.0.5" ];
   }
+  { # ULTRA
+    publicKey = "njb70LARqwc5jHUoPErIuZdF+jGU+SmaeMY3zqhHaX8=";
+    allowedIPs = [ "10.100.0.6" ];
+  }
   { # XIAOMI
     publicKey = "5g67mDkahnXKo2lpM/NpvTejfWdyPFanE8liQD/vwGU=";
     allowedIPs = [ "10.100.0.9" ];
@@ -22,6 +26,10 @@
   { # DIMREM_VPS
     publicKey = "8ot06m/xhpJM/0s5dVRxTgw4grdurn7uqGfCnvTkvRA=";
     allowedIPs = [ "10.100.0.12" ];
+  }
+  { # DIMREM_IOS
+    publicKey = "/GEt8KbceIaoIcuj/lQrY8wHRM+/wRQ/lvjJyfGyWBs=";
+    allowedIPs = [ "10.100.0.13" ];
   }
   { # NTONEE
     publicKey = "TOnxWOVlrkDY907dpjRkky57GTuCNZVTUlqf8iybTwM=";

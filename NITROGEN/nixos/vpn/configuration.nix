@@ -69,10 +69,9 @@
         "ultra.avedus.pro,10.10.10.1"
         "actinium-ipmi.avedus.pro,10.10.10.101"
         "actinium.avedus.pro,10.10.10.100"
+        "carbon.avedus.pro,10.10.10.10"
         "oxygen.avedus.pro,10.10.10.11"
-        
         "nitrogen.avedus.pro,10.100.0.1"
-
       ];
       cname = [
         # Service subdomains
