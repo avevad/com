@@ -51,17 +51,13 @@
     publicKey = "GfzMpzRVlXs6lErt/ePuRfpUmupPJVxJJ6vlDPyDiFc=";
     allowedIPs = [ "10.100.0.42" ];
   }
+  { # P
+    publicKey = "W+uUsufDJ5ArrU2ePdGv7mhZ6mxxYFA/MaTDP7l3tmU=";
+    allowedIPs = [ "10.100.0.43" ];
+  }
   { # ROBIVIRT
     publicKey = "3fpuiXytGReAn2fZJXZPj2tXQV9n1VqYLFmM37xZcl4=";
     allowedIPs = [ "10.100.0.71" ];
-  }
-  { # SHEVLFS
-    publicKey = "S6nECoZVqcFql69aeRIjrBckiNWNcEP7i5lOBbtw5is=";
-    allowedIPs = [ "10.100.0.72" ];
-  }
-  { # POOGEE
-    publicKey = "Jpz7LicWhX/4LwIzABtz199Wi217fol5z1nrkT5i630=";
-    allowedIPs = [ "10.100.0.73" ];
   }
   { # MAX
     publicKey = "WY434khd1S13at3SLooQLfmBt5tkXAzkbTp0uNlUsTs=";
