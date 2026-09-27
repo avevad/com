@@ -24,11 +24,6 @@ scrape_configs:
     scheme: https
     static_configs:
       - targets: ['api.pushy.tg:443']
-  - job_name: pushy1
-    metrics_path: '/api/metrics'
-    scheme: https
-    static_configs:
-      - targets: ['pushy1.helium.avedus.pro:443']
   - job_name: pushy-test
     metrics_path: '/api/metrics'
     scheme: https
@@ -38,14 +33,6 @@ scrape_configs:
     scheme: https
     static_configs:
       - targets: ['dd1.nitrogen.avedus.pro']
-  - job_name: prometheus1
-    scheme: https
-    static_configs:
-      - targets: ['prom1.helium.avedus.pro:443']
-  - job_name: alertmanager1
-    scheme: https
-    static_configs:
-      - targets: ['alerts1.helium.avedus.pro:443']
   - job_name: deadlines
     scheme: https
     static_configs:

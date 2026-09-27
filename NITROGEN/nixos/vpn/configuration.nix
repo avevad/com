@@ -76,7 +76,6 @@
       cname = [
         # Service subdomains
         "*.nitrogen.avedus.pro,nitrogen.avedus.pro"
-        "*.helium.avedus.pro,helium.avedus.pro"
         "*.carbon.avedus.pro,carbon.avedus.pro"
         # Proxy aliases
         "cinema.at.avedus.pro,carbon.avedus.pro"
