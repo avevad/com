@@ -28,19 +28,16 @@
         '';
       };
 
-      wg1 = { # NITROGEN<->dimrem
+      wg1 = { # NITROGEN<->HELIUM
         listenPort = 51340;
-        ips = [ "10.8.0.6/32" ];
+        ips = [ "10.254.0.2/32" ];
         privateKeyFile = "/var/wireguard/key1.txt";
-        peers = [
-          { # dimrem
-            publicKey = "tVh679yQKdxP27Hgzh0+q8nl+4Js8MzoGjtM6pyxcic=";
-            presharedKeyFile = "/var/wireguard/pskey1.txt";
-            allowedIPs = [ "0.0.0.0/0" ];
-            endpoint = "de.vpn.dimrem.com:32554";
-            persistentKeepalive = 25;
-          }
-        ];
+        peers = [{
+          publicKey = "/3D2WyBXElYMSJ+OzZ3GkZBKkIAWbNJa6HHy70WqZWk=";
+          allowedIPs = [ "0.0.0.0/0" ];
+          endpoint = "72.56.22.182:51337";
+          persistentKeepalive = 25;
+        }];
         allowedIPsAsRoutes = false;
         postSetup = ''
           ip route add default dev wg1 table 42
