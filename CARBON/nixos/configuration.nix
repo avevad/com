@@ -28,36 +28,22 @@
         { address = "10.10.10.0"; prefixLength = 24; }
       ];
     };
-
-    wireguard.interfaces = {
-      wg0 = {
-        ips = [ "10.100.100.30/32" ];
-        privateKeyFile = "/root/nixos/wg0.txt";
-        listenPort = 51339;
-        peers = [
-          {
-            publicKey = "jD9IEOpc2ZcoOTZ2bUHexmns1/OBKPl6PeApovWcJSs=";
-            allowedIPs = [ "10.100.0.0/16" ];
-            endpoint = "77.233.223.179:51339"; # hub.avevad.com:51339
-            persistentKeepalive = 25;
-          }
-        ];
-      };
-    };
   };
 
   programs.wireshark.enable = true;
   programs.wireshark.dumpcap.enable = true;
+  programs.tmux.enable = true;
 
   time.timeZone = "Europe/Moscow";
 
   virtualisation.docker.enable = true;
+  virtualisation.docker.daemon.settings.features.cdi = true;
 
   users.groups.media = {};
   users.users.avevad = {
     isNormalUser = true;
     extraGroups = [ "wheel" "docker" "admin" "media" "wireshark" ];
-    packages = with pkgs; [ vim htop git wireshark ];
+    packages = with pkgs; [ vim htop git wireshark python312Packages.pip python312 ];
     shell = pkgs.fish;
   };
 
@@ -71,6 +57,22 @@
     settings.X11Forwarding = true;
   };
   services.jellyfin.enable = true;
+  services.qdrant.enable = true;
+  services.opensearch.enable = true;
+
+  services.minio = {
+    enable = true;
+    dataDir = [ "/mnt/store/minio" ];
+    consoleAddress = "127.0.0.1:9001";
+    listenAddress = "127.0.0.1:9000";
+  };
+
+  services.mongodb = {
+    enable = true;
+    dbpath = "/mnt/store/mongodb";
+    enableAuth = true;
+    initialRootPasswordFile = "/root/mongopasswd";
+  };
 
   networking.firewall.enable = false;
 

@@ -3,6 +3,6 @@
 {
   services.haproxy = {
     enable = true;
-    config = ./haproxy.cfg;
+    config = (builtins.readFile ./haproxy.cfg);
   };
 }
