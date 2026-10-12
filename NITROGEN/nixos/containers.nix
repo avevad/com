@@ -6,15 +6,9 @@ in
 
 {
   virtualisation.oci-containers.backend = "docker";
-  virtualisation.oci-containers.containers = let
-    ghcrAuth = {
-      username = "avevad";
-      passwordFile = "${pkgs.writeText "ghcr-token.txt" ENV.TOKENS.GITHUB_DEPLOY}";
-      registry = "https://ghcr.io";
-    };
-  in {
+  virtualisation.oci-containers.containers = {
     passmgr-vaultwarden = {
-      image = "vaultwarden/server:1.37.3";
+      image = "vaultwarden/server:1.37.4";
       ports = [ "127.0.0.1:8808:80" ];
       volumes = [ "/mnt/state/vaultwarden:/data" ];
       environment = {
@@ -26,7 +20,7 @@ in
     };
 
     metrics-prometheus = {
-      image = "prom/prometheus";
+      image = "prom/prometheus:v3.13.3";
       ports = [ "127.0.0.1:9090:9090" ];
       cmd = [
         "--config.file=/etc/prometheus/prometheus.yml"
@@ -57,7 +51,7 @@ in
         (builtins.readFile ./metrics/alertmanager.yml)
       );
     in {
-      image = "prom/alertmanager";
+      image = "prom/alertmanager:v0.34.1";
       ports = [ "127.0.0.1:9093:9093" ];
       cmd = [
         "--config.file=/etc/alertmanager/alertmanager.yml"
@@ -75,7 +69,7 @@ in
     };
 
     metrics-grafana = {
-      image = "grafana/grafana";
+      image = "grafana/grafana:12.4.12";
       ports = [ "127.0.0.1:3000:3000" ];
       volumes = [
         "/mnt/state/grafana:/var/lib/grafana"

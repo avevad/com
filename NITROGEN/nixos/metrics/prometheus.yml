@@ -20,23 +20,6 @@ scrape_configs:
     scheme: https
     static_configs:
       - targets: ['alerts.nitrogen.avedus.pro:443']
-  - job_name: pushy
-    scheme: https
-    static_configs:
-      - targets: ['api.pushy.tg:443']
-  - job_name: pushy-test
-    metrics_path: '/api/metrics'
-    scheme: https
-    static_configs:
-      - targets: ['pushy-test.nitrogen.avedus.pro:443']
-  - job_name: pushy-ext
-    scheme: https
-    static_configs:
-      - targets: ['dd1.nitrogen.avedus.pro']
-  - job_name: deadlines
-    scheme: https
-    static_configs:
-      - targets: ['ddl.nitrogen.avedus.pro:443']
   - job_name: kkksave
     metrics_path: '/GezLGsNLO73dwn4E2-59TNyABlypkz33o9uIsRZS2vI/metrics'
     scheme: https

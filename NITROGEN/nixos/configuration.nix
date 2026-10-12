@@ -1,9 +1,5 @@
 { config, lib, pkgs, ... }:
 
-let
-  ENV = (import ./environment.nix) { pkgs = pkgs; };
-in
-
 {
   system.stateVersion = "25.05";
 
@@ -39,7 +35,7 @@ in
     packages = with pkgs; [
       vim
       htop
-      neofetch
+      fastfetch
       git
     ];
   };

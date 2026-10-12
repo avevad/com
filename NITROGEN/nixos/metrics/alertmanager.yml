@@ -8,9 +8,6 @@ route:
 
 receivers:
   - name: pushy
-    webhook_configs:
-    - url: 'http://dev/null'
   - name: pushy-dev-team
     webhook_configs:
     - url: '@PUSHY_DEV_TEAM_WEBHOOK_URL@'
-
