@@ -23,10 +23,6 @@
     publicKey = "PQoRJ+Cq6dadX+Ngvv/ywm0VoJ/S4OV57lSQQQXwYlo=";
     allowedIPs = [ "10.100.0.11" ];
   }
-  { # DIMREM_VPS
-    publicKey = "8ot06m/xhpJM/0s5dVRxTgw4grdurn7uqGfCnvTkvRA=";
-    allowedIPs = [ "10.100.0.12" ];
-  }
   { # DIMREM_IOS
     publicKey = "/GEt8KbceIaoIcuj/lQrY8wHRM+/wRQ/lvjJyfGyWBs=";
     allowedIPs = [ "10.100.0.13" ];
@@ -34,10 +30,6 @@
   { # NTONEE
     publicKey = "TOnxWOVlrkDY907dpjRkky57GTuCNZVTUlqf8iybTwM=";
     allowedIPs = [ "10.100.0.21" ];
-  }
-  { # NTONEE_MAC
-    publicKey = "Q76pqLaMgNhusYlbtLw7zFOiSN0l7ykVyHa7+ioVN3w=";
-    allowedIPs = [ "10.100.0.22" ];
   }
   { # M
     publicKey = "cjUaS+TsAvqHZPkeJOSWc+H67fe/cXZ7Z0X+U6cGJnM=";
@@ -58,9 +50,5 @@
   { # ROBIVIRT
     publicKey = "3fpuiXytGReAn2fZJXZPj2tXQV9n1VqYLFmM37xZcl4=";
     allowedIPs = [ "10.100.0.71" ];
-  }
-  { # MAX
-    publicKey = "WY434khd1S13at3SLooQLfmBt5tkXAzkbTp0uNlUsTs=";
-    allowedIPs = [ "10.100.0.74" ];
   }
 ]
