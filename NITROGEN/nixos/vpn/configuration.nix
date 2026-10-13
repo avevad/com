@@ -7,10 +7,14 @@
         listenPort = 51337;
         ips = [ "10.100.0.1/16" ];
         privateKeyFile = "/var/wireguard/key0.txt";
-        peers = [
+        peers = [ # 10.100.10.0/24 = servers, 10.100.0.0/24 = clients
           { # ULTRA
             publicKey = "Bjt3G1nGF1vSq1UWzM/TbmWYBCyjDKlu3ZO7PEvnZlQ=";
-            allowedIPs = [ "10.100.10.10/16" "10.10.0.0/16" ];
+            allowedIPs = [ "10.100.10.10" "10.10.0.0/16" ];
+          }
+          { # HELIUM
+            publicKey = "5+pNXn1zuz28ru1UfqUDZDYM56Ea7/azthMLJ6KHfhs=";
+            allowedIPs = [ "10.100.10.20" ];
           }
         ] ++ ( import ./clients.nix );
         allowedIPsAsRoutes = false;
@@ -28,14 +32,14 @@
         '';
       };
 
-      wg1 = { # NITROGEN<->HELIUM
+      wg1 = { # NITROGEN->HELIUM
         listenPort = 51340;
-        ips = [ "10.254.0.2/32" ];
+        ips = [ "10.254.0.2/30" ];
         privateKeyFile = "/var/wireguard/key1.txt";
-        peers = [{
+        peers = [{ # HELIUM
           publicKey = "/3D2WyBXElYMSJ+OzZ3GkZBKkIAWbNJa6HHy70WqZWk=";
           allowedIPs = [ "0.0.0.0/0" ];
-          endpoint = "72.56.22.182:51337";
+          endpoint = "helium.in.avevad.com:51337";
           persistentKeepalive = 25;
         }];
         allowedIPsAsRoutes = false;
@@ -67,11 +71,13 @@
         "carbon.avedus.pro,10.10.10.10"
         "oxygen.avedus.pro,10.10.10.11"
         "nitrogen.avedus.pro,10.100.0.1"
+        "helium.avedus.pro,10.100.10.20"
       ];
       cname = [
         # Service subdomains
         "*.nitrogen.avedus.pro,nitrogen.avedus.pro"
         "*.carbon.avedus.pro,carbon.avedus.pro"
+        "*.helium.avedus.pro,helium.avedus.pro"
         # Proxy aliases
         "cinema.at.avedus.pro,carbon.avedus.pro"
         "passwords.at.avedus.pro,nitrogen.avedus.pro"
