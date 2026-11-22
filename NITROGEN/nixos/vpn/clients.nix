@@ -3,6 +3,10 @@
     publicKey = "9nGt0lLiGU18FEjcYvGlWIEJ63/mE5ShZOX1GltRGgQ=";
     allowedIPs = [ "10.100.0.2" ];
   }
+  { # CARBON
+    publicKey = "GERZ3L2QAfylFxX3rzbTkxXpq3ydLkE4rlGuc0DAql8=";
+    allowedIPs = [ "10.100.0.3" ];
+  }
   { # M4
     publicKey = "8ukfO7G7MdNkg4pYJO2JK+Okzrj8tAkfnGPupmP2jGw=";
     allowedIPs = [ "10.100.0.4" ];
@@ -50,5 +54,9 @@
   { # ROBIVIRT
     publicKey = "3fpuiXytGReAn2fZJXZPj2tXQV9n1VqYLFmM37xZcl4=";
     allowedIPs = [ "10.100.0.71" ];
+  }
+  { # ALFOOS
+    publicKey = "afd1UKtoxrq8DKdnyCyAd/QckBz21zEhddL1TOpMNBA=";
+    allowedIPs = [ "10.100.0.72" ];
   }
 ]
