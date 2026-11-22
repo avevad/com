@@ -32,14 +32,14 @@
         '';
       };
 
-      wg1 = { # NITROGEN->HELIUM
+      wg1 = { # NITROGEN->egress
         listenPort = 51340;
-        ips = [ "10.254.0.2/30" ];
+        ips = [ "10.2.0.154/24" ];
         privateKeyFile = "/var/wireguard/key1.txt";
-        peers = [{ # HELIUM
-          publicKey = "/3D2WyBXElYMSJ+OzZ3GkZBKkIAWbNJa6HHy70WqZWk=";
+        peers = [{ # ntonee
+          publicKey = "UInDu0ulZvIRTIq+KN2z8I4yi22U0p8tRlWENC3LBF0=";
           allowedIPs = [ "0.0.0.0/0" ];
-          endpoint = "helium.in.avevad.com:51337";
+          endpoint = "pub-wg.ntonee.one:42069";
           persistentKeepalive = 25;
         }];
         allowedIPsAsRoutes = false;
