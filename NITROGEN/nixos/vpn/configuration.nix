@@ -12,10 +12,6 @@
             publicKey = "Bjt3G1nGF1vSq1UWzM/TbmWYBCyjDKlu3ZO7PEvnZlQ=";
             allowedIPs = [ "10.100.10.10" "10.10.0.0/16" ];
           }
-          { # HELIUM
-            publicKey = "5+pNXn1zuz28ru1UfqUDZDYM56Ea7/azthMLJ6KHfhs=";
-            allowedIPs = [ "10.100.10.20" ];
-          }
         ] ++ ( import ./clients.nix );
         allowedIPsAsRoutes = false;
         postSetup = ''
@@ -71,13 +67,11 @@
         "carbon.avedus.pro,10.10.10.10"
         "oxygen.avedus.pro,10.10.10.11"
         "nitrogen.avedus.pro,10.100.0.1"
-        "helium.avedus.pro,10.100.10.20"
       ];
       cname = [
         # Service subdomains
         "*.nitrogen.avedus.pro,nitrogen.avedus.pro"
         "*.carbon.avedus.pro,carbon.avedus.pro"
-        "*.helium.avedus.pro,helium.avedus.pro"
         # Proxy aliases
         "cinema.at.avedus.pro,carbon.avedus.pro"
         "passwords.at.avedus.pro,nitrogen.avedus.pro"
